@@ -3,7 +3,7 @@
 Since version `v0.19.4`, xplr search will default to [native fuzzy matching](https://github.com/sayanarijit/xplr/pull/511).
 
 This plugin is for people who prefer the old regex based filtered search because it
-provides more control and advanced use cases.
+allows more control for advanced use cases.
 
 ## Installation
 
