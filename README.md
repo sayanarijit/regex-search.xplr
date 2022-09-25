@@ -1,13 +1,9 @@
-# xplr plugin template
+# regex-search.xplr
 
-Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
+Since version `v0.19.4`, xplr search will default to [native fuzzy matching](https://github.com/sayanarijit/xplr/pull/511).
 
-> **NOTE:** The `src` directory is a symlink to `.` for compatibility reasons.
-> It may be removed in the future.
-
-## Requirements
-
-- Some tool
+This plugin is for people who prefer the old regex based filtered search because it
+provides more control and advanced use cases.
 
 ## Installation
 
@@ -29,24 +25,22 @@ Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/
   ```bash
   mkdir -p ~/.config/xplr/plugins
 
-  git clone https://github.com/{username}/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  git clone https://github.com/sayanarijit/regex-search.xplr ~/.config/xplr/plugins/regex-search
   ```
 
 - Require the module in `~/.config/xplr/init.lua`
 
   ```lua
-  require("{plugin}").setup()
+  require("regex-search").setup()
 
   -- Or
 
-  require("{plugin}").setup{
-    mode = "action",
-    key = ":",
+  require("regex-search").setup{
+    mode = "default",  -- or xplr.config.modes.builtin.default
+    key = "/",  -- or xplr.config.modes.builtin.default.key_bindings.on_key["/"]
+    prompt = "/",
+    initial_input = "(?i)^",
   }
 
-  -- Type `::` and enjoy.
+  -- Type `/` and then the pattern to match
   ```
-
-## Features
-
-- Some cool feature
