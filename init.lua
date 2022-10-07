@@ -13,6 +13,9 @@ local function setup(args)
   args.key = args.key or "/"
 
   if type(args.key) == "string" then
+    if args.mode.key_bindings.on_key[args.key] == nil then
+      args.mode.key_bindings.on_key[args.key] = {}
+    end
     args.key = args.mode.key_bindings.on_key[args.key]
   end
 
