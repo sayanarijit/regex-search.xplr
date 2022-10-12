@@ -92,6 +92,10 @@ local function setup(args)
       },
     },
   }
+
+  xplr.config.modes.custom.regex_search.key_bindings.on_key.esc = 
+    xplr.config.modes.custom.regex_search.key_bindings.on_key.enter
+
 end
 
-return { setup = setup }
+setup()
